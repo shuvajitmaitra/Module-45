@@ -6,14 +6,14 @@ const ErrorPage = () => {
   return (
     <div>
       <h1>Here... Something is wrong</h1>
-      <h2>{error.message || error.statusText}</h2>
+
       {error.status === 404 && (
         <div>
           <h2>Data not found</h2>
         </div>
       )}
-
-      <Link to="/">
+      <h2>{error.message || error.statusText}</h2>
+      <Link to="/posts">
         <button>Go Back</button>
       </Link>
     </div>

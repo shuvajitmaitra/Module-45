@@ -28,7 +28,9 @@ const PostDetails = () => {
     </div>
   );
 };
+
 PostDetails.propTypes = {
   params: PropTypes.object,
 };
+
 export default PostDetails;
