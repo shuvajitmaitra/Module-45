@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Post = ({ post }) => {
   const { id, title } = post;
@@ -12,6 +12,12 @@ const Post = ({ post }) => {
     display: "flex",
     flexDirection: "column",
   };
+
+  const navigate = useNavigate();
+
+  const handleShowMoreButton = () => {
+    navigate(`/posts/${id}`);
+  };
   return (
     <div style={cardStyle}>
       <h3>Id : {id} </h3>
@@ -19,6 +25,7 @@ const Post = ({ post }) => {
       <Link to={`/posts/${id}`}>
         <button>Show Details</button>
       </Link>
+      <button onClick={handleShowMoreButton}>Show More details</button>
     </div>
   );
 };

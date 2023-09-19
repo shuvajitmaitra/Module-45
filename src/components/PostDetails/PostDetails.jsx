@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const PostDetails = () => {
   const post = useLoaderData();
@@ -15,10 +15,16 @@ const PostDetails = () => {
     flexDirection: "column",
   };
 
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   return (
     <div style={cardStyle}>
       <h3>Id: {post.id} </h3>
       <p>{post.body}</p>
+      <button onClick={handleGoBack}>Go Back</button>
     </div>
   );
 };
