@@ -11,6 +11,7 @@ const Post = ({ post }) => {
     borderRadius: "10px",
     display: "flex",
     flexDirection: "column",
+    background: "cadetblue",
   };
 
   const navigate = useNavigate();
